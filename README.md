@@ -6,7 +6,7 @@ Use o Vagrantfile para subir uma máquina virtual onde você vai instalar o prom
 
 Uma vez a máquina UP, use o comando <vangrant ssh> para se conectar nela. Dentro dela execute o passo a passo informados nos scripts prometheus, otelcontrib e grafana. Nesta ordem.
 
-O otelcontrib será o coletor do Opentelemetry qye vai pegar as métricas no endepoint gerado para processá-las e em seguida armazená-las no banco de dados do prometheus.
+O otelcontrib será o coletor do Opentelemetry que vai pegar as métricas no endpoint gerado para processá-las e em seguida armazená-las no banco de dados do prometheus.
 
 No grafana use as senhas padrão e adicione o prometheus como datasource.
 
