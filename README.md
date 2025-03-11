@@ -1,3 +1,5 @@
+Este projeto tem como pré-requisito o conhecimento em Vagrant.
+
 O projeto é para pegar as métricas do meu computador Windows e levá-las até o grafana. Para isso foi necessário ter o node exporter baixado no meu computador para que este exporte as métricas do mesmo para um endpoint. 
 Este endpoint será o número do ip da sua máquina na porta 9182. O node exporter você consegue baixar aqui: https://github.com/prometheus-community/windows_exporter/releases
 Após seu windows já estará exportando as métricas.
