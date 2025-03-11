@@ -1,0 +1,36 @@
+receivers:
+  prometheus:
+    config:
+      scrape_configs:
+      - job_name: 'windows'
+        scrape_interval: 60s
+        static_configs:
+        - targets: ['ip da sua máquina:9182']  
+
+processors:
+  batch:
+
+exporters:
+  debug:
+    verbosity: detailed
+
+  prometheusremotewrite:
+    endpoint: "http://localhost:9090/api/v1/write"
+    target_info:
+      enabled: false
+    tls:
+      insecure: true
+      insecure_skip_verify: true
+    retry_on_failure:
+      enabled: false
+
+service:
+  pipelines:
+    metrics:
+      receivers: [prometheus]
+      processors: [batch]
+      exporters: [debug, prometheusremotewrite]
+  telemetry:
+    logs:
+      level: debug
+
